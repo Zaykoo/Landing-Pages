@@ -1,0 +1,906 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#000000">
+  <meta name="description" content="Les prochaines étapes après la réservation de ton appel avec Thibaut.">
+  <title>Thibaut - Ton appel est réservé</title>
+  <script src="https://fast.wistia.com/player.js" async></script>
+  <script src="https://fast.wistia.com/embed/man38ksizi.js" async type="module"></script>
+  <script src="https://fast.wistia.com/embed/z1hucxfdh4.js" async type="module"></script>
+  <script src="https://fast.wistia.com/embed/s6m1otdqlt.js" async type="module"></script>
+  <script src="https://fast.wistia.com/embed/3mknxe5rg6.js" async type="module"></script>
+  <script src="https://fast.wistia.com/embed/kyw52vi7zf.js" async type="module"></script>
+  <script src="https://fast.wistia.com/embed/n1s3qxcb0v.js" async type="module"></script>
+  <script src="https://fast.wistia.com/embed/9e6o3qzcp4.js" async type="module"></script>
+  <script src="https://fast.wistia.com/embed/hz7ffdbpgl.js" async type="module"></script>
+  <style>
+    :root {
+      --bg: #000;
+      --surface: #0c0e14;
+      --surface-raised: #11141c;
+      --text: #f8f8f6;
+      --muted: #a7abb5;
+      --line: rgba(255, 255, 255, .12);
+      --blue: #175BFF;
+      --blue-rgb: 23, 91, 255;
+      --nuance-blue-rgb: 0, 47, 167;
+      --max-width: 1040px;
+      --radius-lg: 24px;
+      --radius-md: 16px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 24px;
+      overflow-x: hidden;
+      background: var(--bg);
+    }
+
+    body {
+      min-width: 320px;
+      position: relative;
+      overflow-x: hidden;
+      background: var(--bg);
+      color: var(--text);
+      font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+      -webkit-text-size-adjust: 100%;
+      text-rendering: optimizeLegibility;
+    }
+
+    body::before {
+      position: absolute;
+      z-index: 0;
+      top: -16rem;
+      left: -14rem;
+      width: 42rem;
+      height: 42rem;
+      background: radial-gradient(circle, rgba(var(--nuance-blue-rgb), .15), rgba(var(--nuance-blue-rgb), .05) 30%, transparent 68%);
+      content: "";
+      pointer-events: none;
+    }
+
+    main,
+    footer {
+      position: relative;
+      z-index: 1;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .container {
+      width: min(var(--max-width), calc(100% - 48px));
+      margin-inline: auto;
+    }
+
+    .site-header {
+      position: absolute;
+      z-index: 10;
+      top: 0;
+      right: 0;
+      left: 0;
+      padding: 24px 0;
+    }
+
+    .site-header .container {
+      display: flex;
+      align-items: center;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+
+    .brand-mark {
+      display: block;
+      flex: 0 0 auto;
+      width: 64px;
+      height: 64px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, .14);
+      border-radius: 12px;
+      box-shadow: 0 10px 28px rgba(var(--blue-rgb), .22);
+    }
+
+    .brand-mark img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      transform: scale(1.25);
+    }
+
+    .brand-name {
+      color: #fff;
+      font-size: .8rem;
+      font-weight: 800;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+    }
+
+    .hero {
+      padding: clamp(132px, 15vw, 184px) 0 clamp(28px, 4vw, 46px);
+      text-align: center;
+    }
+
+    .eyebrow,
+    .step-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border: 1px solid rgba(var(--blue-rgb), .82);
+      border-radius: 999px;
+      color: #fff;
+      font-size: .68rem;
+      font-weight: 800;
+      letter-spacing: .13em;
+      line-height: 1;
+      padding: 9px 13px;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before,
+    .step-label::before {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--blue);
+      box-shadow: 0 0 0 4px rgba(var(--blue-rgb), .14);
+      content: "";
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      text-wrap: balance;
+    }
+
+    h1 {
+      max-width: 920px;
+      margin: 24px auto 22px;
+      color: #fff;
+      font-size: clamp(2.6rem, 6vw, 5rem);
+      font-weight: 900;
+      letter-spacing: -.065em;
+      line-height: .97;
+      word-spacing: .04em;
+    }
+
+    h1 .hero-line {
+      display: block;
+    }
+
+    h1 .accent {
+      color: var(--blue);
+      text-shadow: 0 0 28px rgba(var(--blue-rgb), .26);
+    }
+
+    .step-heading h2 .accent {
+      color: var(--blue);
+      text-shadow: 0 0 28px rgba(var(--blue-rgb), .26);
+    }
+
+    .hero-copy {
+      max-width: 620px;
+      margin-inline: auto;
+      color: var(--muted);
+      font-size: clamp(1rem, 1.8vw, 1.15rem);
+      line-height: 1.65;
+    }
+
+    .section {
+      position: relative;
+      isolation: isolate;
+      padding: clamp(48px, 7vw, 86px) 0;
+    }
+
+    .section--one {
+      padding-top: clamp(18px, 2.5vw, 30px);
+      padding-bottom: clamp(16px, 2vw, 24px);
+    }
+
+    .section--one .step-heading {
+      margin-bottom: 16px;
+    }
+
+    .section--two {
+      padding-top: clamp(16px, 2.5vw, 32px);
+      padding-bottom: clamp(18px, 2.5vw, 30px);
+    }
+
+    .section--two .step-heading h2 {
+      white-space: nowrap;
+    }
+
+    .section--two .step-heading {
+      margin-bottom: clamp(16px, 2.5vw, 28px);
+    }
+
+    .section--one::after,
+    .section--two::before,
+    .final-section::before,
+    .final-section::after {
+      position: absolute;
+      z-index: -1;
+      width: 34rem;
+      height: 34rem;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(var(--nuance-blue-rgb), .11), rgba(var(--nuance-blue-rgb), .035) 32%, transparent 70%);
+      content: "";
+      pointer-events: none;
+    }
+
+    .section--one::after {
+      top: 24%;
+      right: -19rem;
+    }
+
+    .section--two::before {
+      top: 23%;
+      left: -19rem;
+    }
+
+    .final-section::before {
+      top: -13rem;
+      left: 4%;
+    }
+
+    .final-section::after {
+      right: -19rem;
+      bottom: -17rem;
+    }
+
+    .step {
+      max-width: 980px;
+      margin-inline: auto;
+    }
+
+    .step-heading {
+      max-width: 680px;
+      margin: 0 auto 28px;
+      text-align: center;
+    }
+
+    .step-heading h2 {
+      margin: 17px 0 11px;
+      color: #fff;
+      font-size: clamp(2rem, 4vw, 3.5rem);
+      font-weight: 900;
+      letter-spacing: -.06em;
+      line-height: .98;
+    }
+
+    .step-heading p {
+      color: var(--muted);
+      font-size: 1rem;
+      line-height: 1.65;
+    }
+
+    .video-card {
+      position: relative;
+      display: grid;
+      min-height: clamp(360px, 48vw, 540px);
+      place-items: center;
+      overflow: hidden;
+      border: 1px solid rgba(var(--blue-rgb), .5);
+      border-radius: var(--radius-lg);
+      background:
+        linear-gradient(145deg, rgba(255, 255, 255, .05), transparent 45%),
+        #0a0c12;
+      box-shadow: 0 24px 70px rgba(0, 0, 0, .42);
+      text-align: center;
+    }
+
+    .video-card--embed {
+      display: block;
+      width: 100%;
+      min-height: 0;
+      aspect-ratio: 16 / 9;
+      background: #0a0c12;
+    }
+
+    .video-card--placeholder {
+      min-height: clamp(420px, 50vw, 600px);
+    }
+
+    .video-card--embed wistia-player {
+      display: block;
+      width: 100%;
+      max-width: 100%;
+      height: 100%;
+    }
+
+    .video-card--embed wistia-player[media-id="man38ksizi"]:not(:defined),
+    .video-card--embed wistia-player[media-id="z1hucxfdh4"]:not(:defined) {
+      display: block;
+      filter: blur(5px);
+      padding-top: 56.25%;
+    }
+
+    .video-card--embed wistia-player[media-id="man38ksizi"]:not(:defined) {
+      background: center / contain no-repeat url("https://fast.wistia.com/embed/medias/man38ksizi/swatch");
+    }
+
+    .video-card--embed wistia-player[media-id="z1hucxfdh4"]:not(:defined) {
+      background: center / contain no-repeat url("https://fast.wistia.com/embed/medias/z1hucxfdh4/swatch");
+    }
+
+    .video-card::after {
+      position: absolute;
+      top: -15rem;
+      right: -8rem;
+      width: 32rem;
+      height: 32rem;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(var(--blue-rgb), .14), transparent 68%);
+      content: "";
+      pointer-events: none;
+    }
+
+    .video-card__content {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      justify-items: center;
+      max-width: 510px;
+      padding: 34px 24px;
+    }
+
+    .video-card__status {
+      color: var(--muted);
+      font-size: .68rem;
+      font-weight: 800;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+
+    .video-card__status::before {
+      display: inline-block;
+      width: 6px;
+      height: 6px;
+      margin: 0 9px 1px 0;
+      border-radius: 50%;
+      background: var(--blue);
+      box-shadow: 0 0 0 4px rgba(var(--blue-rgb), .13);
+      content: "";
+    }
+
+    .video-card__play {
+      display: grid;
+      width: 72px;
+      height: 72px;
+      margin: 26px 0 22px;
+      place-items: center;
+      border: 1px solid rgba(255, 255, 255, .28);
+      border-radius: 50%;
+      background: var(--blue);
+      box-shadow: 0 14px 42px rgba(var(--blue-rgb), .34);
+      color: #fff;
+      font-size: 1.2rem;
+      padding-left: 4px;
+    }
+
+    .video-card h3 {
+      max-width: 600px;
+      color: #fff;
+      font-size: clamp(1.65rem, 3vw, 2.5rem);
+      font-weight: 900;
+      letter-spacing: -.055em;
+      line-height: 1;
+    }
+
+    .video-card p {
+      max-width: 480px;
+      margin-top: 12px;
+      color: var(--muted);
+      font-size: .94rem;
+      line-height: 1.6;
+    }
+
+    .step-arrow {
+      display: grid;
+      width: 48px;
+      height: 38px;
+      margin: 0 auto;
+      place-items: center;
+      color: var(--blue);
+      font-size: 2rem;
+      line-height: 1;
+      text-shadow: 0 0 24px rgba(var(--blue-rgb), .4);
+    }
+
+    .objection-section {
+      padding-top: clamp(20px, 3vw, 36px);
+      padding-bottom: clamp(16px, 2.5vw, 28px);
+    }
+
+    .objection-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .objection-card {
+      display: flex;
+      flex-direction: column;
+      min-height: 250px;
+      padding: 20px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      background: linear-gradient(150deg, rgba(255, 255, 255, .045), rgba(255, 255, 255, .012));
+    }
+
+    .objection-card__heading {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+    }
+
+    .objection-card__number {
+      display: inline-flex;
+      width: 32px;
+      height: 32px;
+      align-items: center;
+      justify-content: center;
+      border-radius: 9px;
+      background: rgba(var(--blue-rgb), .16);
+      color: #fff;
+      font-size: .7rem;
+      font-weight: 900;
+    }
+
+    .objection-card h3 {
+      flex: 1;
+      margin: 4px 0 0;
+      color: #fff;
+      font-size: 1.08rem;
+      font-weight: 850;
+      letter-spacing: -.03em;
+      line-height: 1.05;
+    }
+
+    .objection-card p {
+      color: var(--muted);
+      font-size: .84rem;
+      line-height: 1.55;
+    }
+
+    .mini-video {
+      position: relative;
+      display: block;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      margin-top: auto;
+      overflow: hidden;
+      border: 1px solid rgba(var(--blue-rgb), .28);
+      border-radius: 11px;
+      background:
+        radial-gradient(circle at 72% 26%, rgba(var(--blue-rgb), .22), transparent 42%),
+        linear-gradient(145deg, rgba(255, 255, 255, .045), rgba(255, 255, 255, .008)),
+        #0a0c12;
+    }
+
+    .mini-video wistia-player {
+      display: block;
+      width: 100%;
+      max-width: 100%;
+      height: 100%;
+    }
+
+    .mini-video wistia-player[media-id="s6m1otdqlt"]:not(:defined) {
+      display: block;
+      filter: blur(5px);
+      padding-top: 56.25%;
+      background: center / contain no-repeat url("https://fast.wistia.com/embed/medias/s6m1otdqlt/swatch");
+    }
+
+    .mini-video wistia-player[media-id="3mknxe5rg6"]:not(:defined) {
+      display: block;
+      filter: blur(5px);
+      padding-top: 56.25%;
+      background: center / contain no-repeat url("https://fast.wistia.com/embed/medias/3mknxe5rg6/swatch");
+    }
+
+    .mini-video wistia-player[media-id="kyw52vi7zf"]:not(:defined) {
+      display: block;
+      filter: blur(5px);
+      padding-top: 56.25%;
+      background: center / contain no-repeat url("https://fast.wistia.com/embed/medias/kyw52vi7zf/swatch");
+    }
+
+    .mini-video wistia-player[media-id="n1s3qxcb0v"]:not(:defined) {
+      display: block;
+      filter: blur(5px);
+      padding-top: 56.25%;
+      background: center / contain no-repeat url("https://fast.wistia.com/embed/medias/n1s3qxcb0v/swatch");
+    }
+
+    .mini-video wistia-player[media-id="9e6o3qzcp4"]:not(:defined) {
+      display: block;
+      filter: blur(5px);
+      padding-top: 56.25%;
+      background: center / contain no-repeat url("https://fast.wistia.com/embed/medias/9e6o3qzcp4/swatch");
+    }
+
+    .mini-video wistia-player[media-id="hz7ffdbpgl"]:not(:defined) {
+      display: block;
+      filter: blur(5px);
+      padding-top: 56.25%;
+      background: center / contain no-repeat url("https://fast.wistia.com/embed/medias/hz7ffdbpgl/swatch");
+    }
+
+    .final-section {
+      padding-top: clamp(16px, 2.5vw, 30px);
+      padding-bottom: clamp(82px, 12vw, 150px);
+      text-align: center;
+    }
+
+    .final-card {
+      max-width: 980px;
+      margin-inline: auto;
+      padding: clamp(36px, 5vw, 70px) clamp(24px, 6vw, 82px);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      background:
+        radial-gradient(circle at 50% 0%, rgba(var(--blue-rgb), .1), transparent 42%),
+        linear-gradient(145deg, rgba(255, 255, 255, .045), rgba(255, 255, 255, .01));
+      box-shadow: 0 24px 70px rgba(0, 0, 0, .32);
+    }
+
+    .final-card__heading {
+      text-align: center;
+    }
+
+    .final-card__heading h2 {
+      margin-top: 18px;
+      color: #fff;
+      font-size: clamp(2.2rem, 5vw, 4.4rem);
+      font-weight: 900;
+      letter-spacing: -.065em;
+      line-height: .95;
+    }
+
+    .final-card__items {
+      max-width: 820px;
+      margin: 34px auto 0;
+    }
+
+    .final-card__item {
+      display: grid;
+      justify-items: center;
+      gap: 18px;
+      padding: 30px 0;
+      text-align: center;
+    }
+
+    .final-card__item + .final-card__item {
+      border-top: 1px solid rgba(255, 255, 255, .11);
+    }
+
+    .final-card__icon {
+      display: grid;
+      width: 62px;
+      height: 62px;
+      place-items: center;
+      border-radius: 18px;
+      background: rgba(var(--blue-rgb), .09);
+      color: var(--blue);
+    }
+
+    .final-card__icon svg {
+      width: 31px;
+      height: 31px;
+    }
+
+    .final-card__text {
+      max-width: 760px;
+      color: #d5d7dd;
+      font-size: clamp(1.05rem, 2.2vw, 1.35rem);
+      line-height: 1.55;
+    }
+
+    .final-card__text .accent {
+      color: var(--blue);
+      font-weight: 800;
+      text-shadow: 0 0 24px rgba(var(--blue-rgb), .2);
+    }
+
+    .footer {
+      padding: 40px 0 max(84px, env(safe-area-inset-bottom));
+      border-top: 1px solid rgba(255, 255, 255, .08);
+      color: #6f7480;
+      font-size: .78rem;
+      text-align: center;
+    }
+
+    .footer p + p {
+      margin-top: 9px;
+    }
+
+    .footer__privacy {
+      max-width: 560px;
+      margin-inline: auto;
+      color: #626773;
+      font-size: .72rem;
+      line-height: 1.55;
+    }
+
+    .brand:focus-visible,
+    .footer a:focus-visible {
+      outline: 3px solid rgba(var(--blue-rgb), .7);
+      outline-offset: 4px;
+    }
+
+    @media (max-width: 820px) {
+      .container {
+        width: min(var(--max-width), calc(100% - 36px));
+      }
+
+      .objection-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 640px) {
+      .site-header {
+        padding-top: max(18px, env(safe-area-inset-top));
+      }
+
+      .brand-mark {
+        width: 56px;
+        height: 56px;
+        border-radius: 11px;
+      }
+
+      .brand-name {
+        font-size: .72rem;
+      }
+
+      .hero {
+        padding-top: 116px;
+      }
+
+      h1 {
+        margin-top: 21px;
+        max-width: 100%;
+        width: 100%;
+        font-size: clamp(1.9rem, 9.2vw, 3.4rem);
+        line-height: .98;
+        overflow-wrap: anywhere;
+      }
+
+      h1 .hero-line {
+        max-width: 100%;
+        overflow-wrap: anywhere;
+      }
+
+      .video-card {
+        min-height: 390px;
+        border-radius: 19px;
+      }
+
+      .video-card--embed {
+        min-height: 0;
+      }
+
+      .video-card--placeholder {
+        min-height: 430px;
+      }
+
+      .video-card__play {
+        width: 66px;
+        height: 66px;
+      }
+
+      .objection-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .objection-card {
+        min-height: 0;
+      }
+
+      .section--two .step-heading h2 {
+        white-space: normal;
+      }
+
+      .final-message {
+        font-size: clamp(2rem, 10vw, 3rem);
+      }
+    }
+
+    @supports (height: 100svh) {
+      body {
+        min-height: 100svh;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="#top" aria-label="Retour en haut — Thibaut">
+        <span class="brand-mark">
+          <img src="../logo-lp-thibaut.jpeg" alt="">
+        </span>
+        <span class="brand-name">Thibaut</span>
+      </a>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero container" aria-labelledby="hero-title">
+      <span class="eyebrow">Appel réservé</span>
+      <h1 id="hero-title">
+        <span class="hero-line">Ton appel est <span class="accent">réservé</span></span>
+        <span class="hero-line">mais pas encore confirmé...</span>
+      </h1>
+      <p class="hero-copy">Regarde bien la vidéo juste en dessous qui t'explique les prochaines étapes.</p>
+    </section>
+
+    <section class="section section--one container" aria-labelledby="step-one-title">
+      <div class="step">
+        <div class="step-heading">
+          <span class="step-label" id="step-one-title">Première étape</span>
+        </div>
+
+        <!-- VIDEO SLOT 1: confirmation video supplied by the user. -->
+        <div class="video-card video-card--embed" role="region" aria-label="Vidéo de confirmation">
+          <wistia-player media-id="man38ksizi" aspect="1.7777777777777777" video-quality="1080"></wistia-player>
+        </div>
+      </div>
+    </section>
+
+    <div class="step-arrow" aria-hidden="true">↓</div>
+
+    <section class="section section--two container" aria-labelledby="step-two-title">
+      <div class="step">
+        <div class="step-heading">
+          <span class="step-label">Deuxième étape</span>
+          <h2 id="step-two-title">La vidéo de <span class="accent">présentation</span></h2>
+        </div>
+
+        <!-- VIDEO SLOT 2: main landing-page video supplied by the user. -->
+        <div class="video-card video-card--embed" role="region" aria-label="Vidéo principale de la landing page">
+          <wistia-player media-id="z1hucxfdh4" aspect="1.7777777777777777" video-quality="1080"></wistia-player>
+        </div>
+      </div>
+    </section>
+
+    <div class="step-arrow" aria-hidden="true">↓</div>
+
+    <section class="section objection-section container" aria-labelledby="step-three-title">
+      <div class="step">
+        <div class="step-heading">
+          <span class="step-label">Troisième étape</span>
+          <h2 id="step-three-title">Regarde mes <span class="accent">réponses</span> aux questions fréquentes.</h2>
+          <p>Prends le temps de regarder les six vidéos avant ton appel.</p>
+        </div>
+
+        <div class="objection-grid">
+          <article class="objection-card">
+            <div class="objection-card__heading">
+              <span class="objection-card__number">01</span>
+              <h3>Et si ça ne marche pas ?</h3>
+            </div>
+            <div class="mini-video" role="group" aria-label="Vidéo : Et si ça ne marche pas ?">
+              <wistia-player media-id="s6m1otdqlt" aspect="1.7777777777777777" video-quality="1080"></wistia-player>
+            </div>
+          </article>
+          <article class="objection-card">
+            <div class="objection-card__heading">
+              <span class="objection-card__number">02</span>
+              <h3>Combien de temps avant d'avoir des résultats ?</h3>
+            </div>
+            <div class="mini-video" role="group" aria-label="Vidéo : Combien de temps avant d'avoir des résultats ?">
+              <wistia-player media-id="9e6o3qzcp4" aspect="1.7777777777777777" video-quality="1080"></wistia-player>
+            </div>
+          </article>
+          <article class="objection-card">
+            <div class="objection-card__heading">
+              <span class="objection-card__number">03</span>
+              <h3>Ça demande combien de temps par jour ?</h3>
+            </div>
+            <div class="mini-video" role="group" aria-label="Vidéo : Ça demande combien de temps par jour ?">
+              <wistia-player media-id="hz7ffdbpgl" aspect="1.7777777777777777" video-quality="1080"></wistia-player>
+            </div>
+          </article>
+          <article class="objection-card">
+            <div class="objection-card__heading">
+              <span class="objection-card__number">04</span>
+              <h3>Je ne suis pas à l'aise à la caméra</h3>
+            </div>
+            <div class="mini-video" role="group" aria-label="Vidéo : Je ne suis pas à l'aise à la caméra">
+              <wistia-player media-id="n1s3qxcb0v" aspect="1.7777777777777777" video-quality="1080"></wistia-player>
+            </div>
+          </article>
+          <article class="objection-card">
+            <div class="objection-card__heading">
+              <span class="objection-card__number">05</span>
+              <h3>J'ai déjà regardé des vidéos, mais sans résultat</h3>
+            </div>
+            <div class="mini-video" role="group" aria-label="Vidéo : J'ai déjà regardé des vidéos, mais sans résultat">
+              <wistia-player media-id="kyw52vi7zf" aspect="1.7777777777777777" video-quality="1080"></wistia-player>
+            </div>
+          </article>
+          <article class="objection-card">
+            <div class="objection-card__heading">
+              <span class="objection-card__number">06</span>
+              <h3>Pourquoi c'est un investissement, pas une dépense !</h3>
+            </div>
+            <div class="mini-video" role="group" aria-label="Vidéo : Pourquoi c'est un investissement, pas une dépense !">
+              <wistia-player media-id="3mknxe5rg6" aspect="1.7777777777777777" video-quality="1080"></wistia-player>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <div class="step-arrow step-arrow--final" aria-hidden="true">↓</div>
+
+    <section class="section final-section container" aria-labelledby="final-title">
+      <div class="final-card">
+        <div class="final-card__heading">
+          <span class="step-label">À retenir</span>
+          <h2 id="final-title">Avant ton appel</h2>
+        </div>
+
+        <div class="final-card__items">
+          <div class="final-card__item">
+            <span class="final-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20.5 11.2a8.4 8.4 0 0 1-12.4 7.4L4 20l1.4-4A8.4 8.4 0 1 1 20.5 11.2Z" />
+                <path d="M8.5 8.2c.2-.4.4-.4.7-.4h.5c.2 0 .4.1.5.4l.7 1.6c.1.3.1.5-.1.7l-.6.7c.5 1 1.3 1.8 2.3 2.3l.7-.6c.2-.2.4-.2.7-.1l1.6.7c.3.1.4.3.4.5v.5c0 .3 0 .5-.4.7-.4.2-1.1.3-1.8.1-1.1-.3-2.4-1-3.5-2.1s-1.8-2.4-2.1-3.5c-.2-.7-.1-1.4.1-1.8Z" />
+              </svg>
+            </span>
+            <p class="final-card__text">Envoie-nous un message sur le <span class="accent">groupe</span> après avoir regardé les vidéos.</p>
+          </div>
+
+          <div class="final-card__item">
+            <span class="final-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3.5" y="5.5" width="17" height="15" rx="2" />
+                <path d="M7.5 3.5v4M16.5 3.5v4M3.5 10h17" />
+              </svg>
+            </span>
+            <p class="final-card__text">Présente-toi à l'heure. L'appel durera 30-45 min.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>© <span id="year">2026</span> Thibaut — Tous droits réservés.</p>
+      <p class="footer__privacy">Les informations partagées servent uniquement à organiser ton appel et à préparer l'échange.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

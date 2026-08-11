@@ -1,0 +1,751 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#000000">
+  <meta name="description" content="Bienvenue dans Content Système avec Thibaut.">
+  <title>Thibaut - Bienvenue dans Content Système</title>
+  <script src="https://fast.wistia.com/player.js" async></script>
+  <script src="https://fast.wistia.com/embed/7fovcw2jkz.js" async type="module"></script>
+
+  <style>
+    :root {
+      --bg: #000;
+      --surface: #0b0d12;
+      --surface-raised: #11141c;
+      --text: #f8f8f6;
+      --muted: #a7abb5;
+      --line: rgba(255, 255, 255, .12);
+      --accent: #175BFF;
+      --accent-rgb: 23, 91, 255;
+      --nuance-blue-rgb: 0, 47, 167;
+      --max-width: 1040px;
+      --radius-lg: 24px;
+      --radius-md: 18px;
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    html {
+      background: var(--bg);
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+      scroll-padding-top: 24px;
+    }
+
+    body {
+      min-width: 320px;
+      position: relative;
+      margin: 0;
+      overflow-x: hidden;
+      background: var(--bg);
+      color: var(--text);
+      font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+      -webkit-text-size-adjust: 100%;
+      text-rendering: optimizeLegibility;
+    }
+
+    body::before {
+      position: absolute;
+      z-index: 0;
+      top: -17rem;
+      left: -14rem;
+      width: 42rem;
+      height: 42rem;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(var(--nuance-blue-rgb), .17), rgba(var(--nuance-blue-rgb), .05) 34%, transparent 70%);
+      content: "";
+      pointer-events: none;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    main,
+    footer {
+      position: relative;
+      z-index: 1;
+    }
+
+    .container {
+      width: min(var(--max-width), calc(100% - 48px));
+      margin-inline: auto;
+    }
+
+    .site-header {
+      position: absolute;
+      z-index: 10;
+      top: 0;
+      right: 0;
+      left: 0;
+      padding: 24px 0;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+
+    .brand-mark {
+      display: block;
+      width: 64px;
+      height: 64px;
+      flex: 0 0 auto;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, .14);
+      border-radius: 12px;
+      box-shadow: 0 10px 28px rgba(var(--accent-rgb), .22);
+    }
+
+    .brand-mark img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      transform: scale(1.25);
+    }
+
+    .brand-name {
+      color: #fff;
+      font-size: .8rem;
+      font-weight: 800;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+    }
+
+    .hero {
+      padding: clamp(132px, 15vw, 184px) 0 clamp(30px, 4.5vw, 54px);
+      text-align: center;
+    }
+
+    .eyebrow,
+    .section-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border: 1px solid rgba(var(--accent-rgb), .82);
+      border-radius: 999px;
+      color: #fff;
+      font-size: .68rem;
+      font-weight: 800;
+      letter-spacing: .13em;
+      line-height: 1;
+      padding: 9px 13px;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before,
+    .section-label::before {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 0 4px rgba(var(--accent-rgb), .14);
+      content: "";
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      margin-top: 0;
+      margin-bottom: 0;
+      text-wrap: balance;
+    }
+
+    h1 {
+      max-width: 900px;
+      margin: 24px auto 18px;
+      color: #fff;
+      font-size: clamp(2.75rem, 7vw, 6rem);
+      font-weight: 900;
+      letter-spacing: -.068em;
+      line-height: .94;
+      word-spacing: .045em;
+    }
+
+    h1 .hero-line {
+      display: block;
+      max-width: 100%;
+      overflow-wrap: anywhere;
+    }
+
+    .hero-inline {
+      display: inline;
+    }
+
+    .hero-mobile-prefix,
+    .mobile-only-break {
+      display: none;
+    }
+
+    .accent {
+      color: var(--accent);
+      text-shadow: 0 0 28px rgba(var(--accent-rgb), .26);
+    }
+
+    .hero-subtitle {
+      color: #fff;
+      font-size: clamp(1.2rem, 2.5vw, 1.7rem);
+      font-weight: 700;
+      letter-spacing: -.025em;
+    }
+
+    .onboarding-video-section {
+      position: relative;
+      isolation: isolate;
+      padding: 0 0 clamp(18px, 3vw, 32px);
+    }
+
+    .onboarding-video-section::before {
+      position: absolute;
+      z-index: -1;
+      top: -18%;
+      bottom: -18%;
+      left: calc(50% - 50vw);
+      width: 100vw;
+      background: radial-gradient(ellipse 62% 58% at 88% 48%, rgba(var(--accent-rgb), .16), transparent 72%);
+      content: "";
+      pointer-events: none;
+    }
+
+    .onboarding-video-frame {
+      position: relative;
+      max-width: 980px;
+      margin-inline: auto;
+      padding: 9px;
+      border: 1px solid rgba(var(--accent-rgb), .42);
+      border-radius: var(--radius-lg);
+      background: linear-gradient(145deg, rgba(var(--accent-rgb), .24), rgba(255, 255, 255, .035) 56%);
+      box-shadow: 0 28px 80px rgba(0, 0, 0, .45), 0 0 90px rgba(var(--accent-rgb), .12);
+    }
+
+    .onboarding-video-player {
+      display: block;
+      aspect-ratio: 16 / 9;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, .1);
+      border-radius: calc(var(--radius-lg) - 7px);
+      background: #0c0e14;
+    }
+
+    .onboarding-video-player wistia-player {
+      display: block;
+      width: 100%;
+      max-width: 100%;
+      height: 100%;
+    }
+
+    .onboarding-video-player wistia-player[media-id="7fovcw2jkz"]:not(:defined) {
+      display: block;
+      filter: blur(5px);
+      padding-top: 56.25%;
+      background: center / contain no-repeat url("https://fast.wistia.com/embed/medias/7fovcw2jkz/swatch");
+    }
+
+    .step-arrow {
+      display: grid;
+      width: 100%;
+      height: 42px;
+      margin: 0;
+      place-items: center;
+      color: var(--accent);
+      font-size: 2.35rem;
+      line-height: 1;
+      text-shadow: 0 0 24px rgba(var(--accent-rgb), .45);
+    }
+
+    .steps-section {
+      position: relative;
+      isolation: isolate;
+      padding: clamp(20px, 3vw, 32px) 0 clamp(18px, 2.5vw, 28px);
+      text-align: center;
+    }
+
+    .steps-section::before {
+      position: absolute;
+      z-index: -1;
+      top: -5rem;
+      left: -18rem;
+      width: 38rem;
+      height: 38rem;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(var(--nuance-blue-rgb), .12), transparent 68%);
+      content: "";
+      pointer-events: none;
+    }
+
+    .steps-heading {
+      max-width: 760px;
+      margin: 0 auto clamp(28px, 4vw, 44px);
+    }
+
+    .steps-heading h2 {
+      width: 100%;
+      margin: 18px auto 0;
+      color: #fff;
+      font-size: clamp(2.2rem, 5vw, 4.25rem);
+      font-weight: 900;
+      letter-spacing: -.065em;
+      line-height: .96;
+      overflow-wrap: anywhere;
+    }
+
+    .steps-line {
+      display: block;
+      max-width: 100%;
+      overflow-wrap: anywhere;
+    }
+
+    .integration-grid {
+      display: grid;
+      min-width: 0;
+      grid-template-columns: 1fr;
+      gap: 24px;
+      max-width: 980px;
+      margin-inline: auto;
+      text-align: left;
+    }
+
+    .integration-card {
+      position: relative;
+      min-width: 0;
+      overflow: hidden;
+      padding: clamp(16px, 2.5vw, 24px);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      background:
+        radial-gradient(circle at 78% 8%, rgba(var(--accent-rgb), .15), transparent 38%),
+        linear-gradient(150deg, rgba(255, 255, 255, .045), rgba(255, 255, 255, .012)),
+        var(--surface);
+      box-shadow: 0 22px 62px rgba(0, 0, 0, .28);
+    }
+
+    .integration-card::after {
+      position: absolute;
+      right: -7rem;
+      bottom: -11rem;
+      width: 22rem;
+      height: 22rem;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(var(--nuance-blue-rgb), .14), transparent 68%);
+      content: "";
+      pointer-events: none;
+    }
+
+    .integration-card > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    .typeform-frame {
+      display: block;
+      width: 100%;
+      height: min(720px, 78svh);
+      min-height: 620px;
+      border: 0;
+      border-radius: 14px;
+      background: #fff;
+    }
+
+    .community-section {
+      position: relative;
+      isolation: isolate;
+      padding: 0 0 clamp(20px, 2.5vw, 28px);
+      text-align: center;
+    }
+
+    .community-section::before {
+      position: absolute;
+      z-index: -1;
+      top: -12rem;
+      right: -18rem;
+      width: 42rem;
+      height: 42rem;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(var(--accent-rgb), .14), rgba(var(--accent-rgb), .045) 34%, transparent 70%);
+      content: "";
+      pointer-events: none;
+    }
+
+    .community-card {
+      max-width: 980px;
+      margin-inline: auto;
+      padding: clamp(46px, 7vw, 86px) 24px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      background:
+        radial-gradient(circle at 50% 0%, rgba(var(--accent-rgb), .13), transparent 48%),
+        linear-gradient(145deg, rgba(255, 255, 255, .045), rgba(255, 255, 255, .01)),
+        var(--surface);
+      box-shadow: 0 24px 72px rgba(0, 0, 0, .3);
+    }
+
+    .community-card h2 {
+      margin: 18px auto 30px;
+      color: #fff;
+      font-size: clamp(2.45rem, 6vw, 5rem);
+      font-weight: 900;
+      letter-spacing: -.068em;
+      line-height: .95;
+    }
+
+    .community-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      border: 1px solid rgba(var(--accent-rgb), .8);
+      border-radius: 999px;
+      background: var(--accent);
+      box-shadow: 0 16px 44px rgba(var(--accent-rgb), .25);
+      color: #fff;
+      font-size: 1rem;
+      font-weight: 850;
+      padding: 15px 23px;
+      text-decoration: none;
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+
+    .community-cta:hover {
+      box-shadow: 0 20px 52px rgba(var(--accent-rgb), .34);
+      transform: translateY(-2px);
+    }
+
+    .community-cta:focus-visible {
+      outline: 3px solid rgba(var(--accent-rgb), .7);
+      outline-offset: 4px;
+    }
+
+    .booking-section {
+      position: relative;
+      isolation: isolate;
+      padding: 0 0 clamp(74px, 10vw, 128px);
+    }
+
+    .booking-section::before {
+      position: absolute;
+      z-index: -1;
+      top: -10rem;
+      left: -18rem;
+      width: 42rem;
+      height: 42rem;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(var(--nuance-blue-rgb), .14), rgba(var(--nuance-blue-rgb), .045) 34%, transparent 70%);
+      content: "";
+      pointer-events: none;
+    }
+
+    .booking-heading {
+      max-width: 900px;
+      margin: 0 auto clamp(26px, 4vw, 42px);
+      text-align: center;
+    }
+
+    .booking-heading h2 {
+      margin: 18px auto 0;
+      color: #fff;
+      font-size: clamp(2.45rem, 6vw, 5rem);
+      font-weight: 900;
+      letter-spacing: -.068em;
+      line-height: .95;
+    }
+
+    .booking-shell {
+      max-width: 1120px;
+      margin-inline: auto;
+      padding: clamp(7px, 1.3vw, 14px);
+      border: 1px solid rgba(var(--accent-rgb), .18);
+      border-radius: var(--radius-lg);
+      background: #fff;
+      box-shadow: 0 30px 90px rgba(0, 0, 0, .45), 0 0 100px rgba(var(--accent-rgb), .1);
+    }
+
+    .booking-card {
+      padding: clamp(14px, 2vw, 22px);
+      border: 1px solid #e4e6eb;
+      border-radius: calc(var(--radius-lg) - 8px);
+      background: #fff;
+      color: #111318;
+    }
+
+    /* Keep the scheduler in a light, untransformed, non-clipped ancestor. */
+    .iclosed-widget {
+      width: 100%;
+      height: 700px !important;
+    }
+
+    .iclosed-widget iframe {
+      display: block;
+      width: 100%;
+      height: 100% !important;
+      min-height: 0 !important;
+      border: 0;
+    }
+
+    .booking-fallback {
+      margin-top: 14px;
+      color: #747985;
+      font-size: .78rem;
+      text-align: center;
+    }
+
+    .booking-fallback a {
+      color: var(--accent);
+      font-weight: 800;
+    }
+
+    .footer {
+      padding: 36px 0 max(40px, env(safe-area-inset-bottom));
+      border-top: 1px solid rgba(255, 255, 255, .08);
+      color: #6f7480;
+      font-size: .78rem;
+      text-align: center;
+    }
+
+    .brand:focus-visible {
+      outline: 3px solid rgba(var(--accent-rgb), .7);
+      outline-offset: 4px;
+    }
+
+    @media (max-width: 820px) {
+      .container {
+        width: min(var(--max-width), calc(100% - 36px));
+      }
+
+      .integration-grid {
+        grid-template-columns: 1fr;
+        max-width: 640px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .site-header {
+        padding-top: max(18px, env(safe-area-inset-top));
+      }
+
+      .container {
+        width: min(var(--max-width), calc(100% - 30px));
+      }
+
+      .brand-mark {
+        width: 56px;
+        height: 56px;
+        border-radius: 11px;
+      }
+
+      .brand-name {
+        font-size: .72rem;
+      }
+
+      .hero {
+        padding-top: 116px;
+      }
+
+      h1 {
+        width: 100%;
+        margin-top: 21px;
+        font-size: clamp(1.8rem, 8.7vw, 3.3rem);
+        line-height: .97;
+        overflow-wrap: anywhere;
+      }
+
+      .hero-inline {
+        display: none;
+      }
+
+      .hero-mobile-prefix,
+      .mobile-only-break {
+        display: inline;
+      }
+
+      .mobile-only-break {
+        display: block;
+      }
+
+      .steps-heading h2 {
+        font-size: clamp(1.85rem, 8.5vw, 3rem);
+        line-height: 1;
+      }
+
+      .hero-subtitle {
+        font-size: 1.18rem;
+      }
+
+      .typeform-frame {
+        height: 640px;
+        min-height: 640px;
+        border-radius: 12px;
+      }
+
+      .community-card {
+        border-radius: 19px;
+        padding-inline: 18px;
+      }
+
+      .community-card h2 {
+        font-size: clamp(2.15rem, 10vw, 3.4rem);
+      }
+
+      .booking-heading h2 {
+        font-size: clamp(2.15rem, 10vw, 3.4rem);
+      }
+
+      .booking-shell {
+        padding: 6px;
+        border-radius: 20px;
+      }
+
+      .booking-card {
+        padding: 14px 10px;
+        border-radius: 15px;
+      }
+
+      .iclosed-widget {
+        height: 660px !important;
+      }
+    }
+
+    @supports (height: 100svh) {
+      body {
+        min-height: 100svh;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="#top" aria-label="Retour en haut — Thibaut">
+        <span class="brand-mark">
+          <img src="../logo-lp-thibaut.jpeg" alt="Logo Content Système">
+        </span>
+        <span class="brand-name">Thibaut</span>
+      </a>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero container" aria-labelledby="hero-title">
+      <span class="eyebrow">Content Système</span>
+      <h1 id="hero-title">
+        <span class="hero-line">Bienvenue à toi<span class="hero-inline"> dans</span></span>
+        <span class="hero-line"><span class="hero-mobile-prefix">dans </span><span class="accent">Content<br class="mobile-only-break"> Système</span> !</span>
+      </h1>
+      <p class="hero-subtitle">On va tout <span class="accent">déchirer</span></p>
+    </section>
+
+    <section class="onboarding-video-section container" aria-label="Vidéo d'onboarding">
+      <div class="onboarding-video-frame">
+        <div class="onboarding-video-player">
+          <wistia-player media-id="7fovcw2jkz" aspect="1.7777777777777777"></wistia-player>
+        </div>
+      </div>
+    </section>
+
+    <div class="step-arrow" aria-hidden="true">
+      <svg viewBox="0 0 32 42" width="28" height="38" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M16 2V34M16 34L4.5 22.5M16 34L27.5 22.5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+
+    <section class="steps-section container" aria-labelledby="steps-title">
+      <div class="steps-heading">
+        <span class="section-label">Pour bien commencer</span>
+        <h2 id="steps-title">
+          <span class="steps-line">Les deux questionnaires à remplir</span>
+          <span class="steps-line">avant de <span class="accent">démarrer</span></span>
+        </h2>
+      </div>
+
+      <div class="integration-grid">
+        <article class="integration-card" aria-label="Premier questionnaire Typeform">
+          <iframe
+            class="typeform-frame"
+            src="https://form.typeform.com/to/jz25EAX3"
+            title="Premier questionnaire Typeform"
+            allow="camera; microphone; autoplay; encrypted-media; fullscreen">
+          </iframe>
+        </article>
+
+        <article class="integration-card" aria-label="Deuxième questionnaire Typeform">
+          <iframe
+            class="typeform-frame"
+            src="https://form.typeform.com/to/YDSJjQb5"
+            title="Deuxième questionnaire Typeform"
+            allow="camera; microphone; autoplay; encrypted-media; fullscreen">
+          </iframe>
+        </article>
+      </div>
+    </section>
+
+    <div class="step-arrow" aria-hidden="true">
+      <svg viewBox="0 0 32 42" width="28" height="38" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M16 2V34M16 34L4.5 22.5M16 34L27.5 22.5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+
+    <section class="community-section container" aria-labelledby="community-title">
+      <div class="community-card">
+        <span class="section-label">La communauté</span>
+        <h2 id="community-title">Rejoins la <span class="accent">communauté</span></h2>
+        <a
+          class="community-cta"
+          href="https://www.skool.com/the-expansion-build-6110/about?ref=464e22ffae004a4db9f6546771efe65f"
+          target="_blank"
+          rel="noopener noreferrer">
+          La communauté <span aria-hidden="true">↗</span>
+        </a>
+      </div>
+    </section>
+
+    <div class="step-arrow" aria-hidden="true">
+      <svg viewBox="0 0 32 42" width="28" height="38" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M16 2V34M16 34L4.5 22.5M16 34L27.5 22.5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+
+    <section class="booking-section container" aria-labelledby="booking-title">
+      <div class="booking-heading">
+        <span class="section-label">Ton prochain pas</span>
+        <h2 id="booking-title">Réserve ton appel dans les <span class="accent">48h</span></h2>
+      </div>
+
+      <div class="booking-shell">
+        <div class="booking-card">
+          <!-- iClosed onboarding widget. Keep its light, untransformed ancestor intact. -->
+          <div class="iclosed-widget" data-url="https://app.iclosed.io/e/ThibautLvo/appel-d-onboarding" title="Réserver un appel d'onboarding"></div>
+          <script src="https://app.iclosed.io/assets/widget.js" async></script>
+
+          <noscript>
+            <iframe src="https://app.iclosed.io/e/ThibautLvo/appel-d-onboarding" title="Réserver un appel d'onboarding" width="100%" height="700" frameborder="0"></iframe>
+          </noscript>
+          <p class="booking-fallback">Le calendrier ne s'affiche pas ? <a href="https://app.iclosed.io/e/ThibautLvo/appel-d-onboarding" target="_blank" rel="noopener noreferrer">Ouvre la page de réservation</a>.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>© 2026 Thibaut — Content Système.</p>
+    </div>
+  </footer>
+</body>
+</html>
