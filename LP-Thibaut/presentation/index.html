@@ -111,24 +111,49 @@
       place-items: center;
       overflow: hidden;
       background:
-        radial-gradient(ellipse 70% 60% at 18% 0%, rgba(255, 255, 255, .28), rgba(255, 255, 255, 0) 70%),
-        linear-gradient(140deg, rgba(var(--hero-blue-rgb), .42), rgba(var(--blue-rgb), .22));
+        radial-gradient(ellipse 55% 70% at 12% 8%, rgba(110, 160, 255, .55), rgba(110, 160, 255, 0) 70%),
+        radial-gradient(ellipse 60% 70% at 92% 100%, rgba(var(--blue-rgb), .7), rgba(var(--blue-rgb), 0) 70%),
+        linear-gradient(128deg, #4f8bff 0%, var(--hero-blue) 46%, var(--blue) 100%);
       box-shadow:
-        inset 0 0 0 1px rgba(255, 255, 255, .28),
+        inset 0 0 0 1px rgba(255, 255, 255, .2),
         inset 0 1px 0 rgba(255, 255, 255, .35),
-        0 8px 24px rgba(var(--hero-blue-rgb), .28);
-      -webkit-backdrop-filter: blur(14px) saturate(160%);
-      backdrop-filter: blur(14px) saturate(160%);
+        0 8px 26px rgba(var(--hero-blue-rgb), .4);
       color: #fff;
       font-size: 15px;
       font-weight: 800;
-      letter-spacing: -.04em;
+      letter-spacing: -.06em;
       line-height: 1;
+    }
+
+    .brand-mark span {
+      position: relative;
+      transform: translate(-1px, -1px);
+    }
+
+    .brand-mark::after {
+      position: absolute;
+      top: -20%;
+      bottom: -20%;
+      left: -70%;
+      width: 50%;
+      background: linear-gradient(90deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, .35), rgba(255, 255, 255, 0));
+      content: "";
+      transform: skewX(-18deg);
+      animation: brand-shine 6s ease-in-out 1s infinite;
+    }
+
+    @keyframes brand-shine {
+      0%, 70% { left: -70%; }
+      100% { left: 130%; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .brand-mark::after { animation: none; }
     }
 
     .brand-name {
       color: #fff;
-      font-size: .72rem;
+      font-size: .62rem;
       font-weight: 800;
       letter-spacing: .18em;
       text-transform: uppercase;
@@ -672,7 +697,7 @@
       }
 
       .brand-name {
-        font-size: .66rem;
+        font-size: .58rem;
       }
 
       .menu-panel {
@@ -748,7 +773,7 @@
   <header class="site-header">
     <div class="container">
       <a class="brand" href="#top" aria-label="Retour en haut — Thibaut">
-        <span class="brand-mark" aria-hidden="true">CS</span>
+        <span class="brand-mark" aria-hidden="true"><span>CS</span></span>
         <span class="brand-name">Thibaut</span>
       </a>
       <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-menu" aria-label="Ouvrir le menu">
