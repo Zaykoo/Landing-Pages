@@ -288,6 +288,19 @@
       white-space: nowrap;
     }
 
+    h1 .hero-line--small {
+      margin-top: .25em;
+      font-size: min(.46em, 5vw);
+      letter-spacing: -.025em;
+    }
+
+    h1 .hero-line--small .accent {
+      text-decoration: underline;
+      text-decoration-color: currentColor;
+      text-decoration-thickness: .09em;
+      text-underline-offset: .2em;
+    }
+
     h1 .hero-money {
       color: var(--hero-blue);
       text-shadow: 0 0 34px rgba(var(--hero-blue-rgb), .45);
@@ -751,7 +764,7 @@
       <h1 id="hero-title">
         <span class="hero-line">De 0 à <span class="hero-money">30&nbsp;000</span></span>
         <span class="hero-line"><span class="hero-money">abonnés</span> en 3 mois&nbsp;:</span>
-        <span class="hero-line">la méthode pour <span class="accent">en vivre</span></span>
+        <span class="hero-line hero-line--small">la méthode pour <span class="accent">en vivre</span></span>
       </h1>
       <p class="hero-copy">
         En 10 minutes, je te montre comment j’ai fait, et comment transformer ton audience en revenus, même avec un travail à côté, peu importe ta niche.
