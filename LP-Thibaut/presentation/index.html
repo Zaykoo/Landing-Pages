@@ -370,11 +370,33 @@
     }
 
     .hero-copy {
-      max-width: 560px;
+      display: flex;
+      max-width: 640px;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
       margin: 0 auto;
       color: var(--muted-strong);
       font-size: clamp(.86rem, 1.4vw, .98rem);
       line-height: 1.55;
+    }
+
+    .hero-arrow {
+      flex: 0 0 auto;
+      width: 16px;
+      height: 22px;
+      color: var(--text-blue);
+      filter: drop-shadow(0 0 8px rgba(var(--hero-blue-rgb), .6));
+      animation: hero-arrow 1.8s ease-in-out infinite;
+    }
+
+    @keyframes hero-arrow {
+      0%, 100% { transform: translateY(-3px); }
+      50% { transform: translateY(4px); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .hero-arrow { animation: none; }
     }
 
     .brand:focus-visible,
@@ -823,7 +845,9 @@
         <span class="hero-line hero-line--small">en <span class="accent">90&nbsp;jours</span></span>
       </h1>
       <p class="hero-copy">
-        Et comment tu peux faire pareil, que tu postes déjà ou que tu partes de zéro.
+        <svg class="hero-arrow" viewBox="0 0 24 32" aria-hidden="true"><path d="M12 2v26M12 28l-8-8M12 28l8-8" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span>Et comment tu peux faire pareil, que tu postes déjà ou que tu partes de zéro.</span>
+        <svg class="hero-arrow" viewBox="0 0 24 32" aria-hidden="true"><path d="M12 2v26M12 28l-8-8M12 28l8-8" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </p>
     </section>
 
