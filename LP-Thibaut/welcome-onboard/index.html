@@ -70,6 +70,26 @@
       color: inherit;
     }
 
+    .page-glows {
+      position: absolute;
+      z-index: 0;
+      inset: 0;
+      overflow: hidden;
+      pointer-events: none;
+    }
+
+    .page-glows span {
+      position: absolute;
+      width: 40rem;
+      height: 40rem;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(0, 93, 255, .17), rgba(0, 93, 255, .06) 30%, transparent 68%);
+    }
+
+    .page-glows span:nth-child(1) { top: 22%; right: -20rem; }
+    .page-glows span:nth-child(2) { top: 48%; left: -22rem; }
+    .page-glows span:nth-child(3) { top: 74%; right: -20rem; }
+
     main,
     footer {
       position: relative;
@@ -661,6 +681,7 @@
   </style>
 </head>
 <body>
+  <div class="page-glows" aria-hidden="true"><span></span><span></span><span></span></div>
   <header class="site-header">
     <div class="container">
       <a class="brand" href="#top" aria-label="Retour en haut — Content Système">
