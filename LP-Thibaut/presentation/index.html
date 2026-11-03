@@ -877,6 +877,29 @@
 
           <!-- iClosed booking widget. Keep its light, untransformed ancestor intact. -->
           <div class="iclosed-widget" data-url="https://app.iclosed.io/e/ThibautLvo/appel-strategique" title="Réserver un appel stratégique"></div>
+          <script>
+            // Transmet les codes de suivi (utm_…) des liens traçables au calendrier iClosed,
+            // pour savoir de quelle bio ou vidéo vient chaque réservation. Gardés 30 jours si la personne revient plus tard.
+            (function () {
+              var KEY = "cs_utm", utm = {};
+              new URLSearchParams(location.search).forEach(function (v, k) { if (k.indexOf("utm_") === 0) utm[k] = v; });
+              try {
+                if (Object.keys(utm).length) localStorage.setItem(KEY, JSON.stringify({ at: Date.now(), utm: utm }));
+                else {
+                  var saved = JSON.parse(localStorage.getItem(KEY) || "null");
+                  if (saved && Date.now() - saved.at < 30 * 864e5) utm = saved.utm;
+                }
+              } catch (e) {}
+              if (!Object.keys(utm).length) return;
+              var add = function (url) { var u = new URL(url); for (var k in utm) u.searchParams.set(k, utm[k]); return u.toString(); };
+              var widget = document.querySelector(".iclosed-widget");
+              if (widget) widget.setAttribute("data-url", add(widget.getAttribute("data-url")));
+              document.addEventListener("DOMContentLoaded", function () {
+                var fallback = document.querySelector(".booking-fallback a");
+                if (fallback) fallback.href = add(fallback.href);
+              });
+            })();
+          </script>
           <script src="https://app.iclosed.io/assets/widget.js" async></script>
 
           <noscript>
