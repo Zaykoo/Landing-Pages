@@ -317,6 +317,23 @@
       text-shadow: 0 0 24px rgba(var(--accent-rgb), .45);
     }
 
+    .step-arrow {
+      animation: step-arrow 1.8s ease-in-out infinite;
+    }
+
+    .step-arrow svg {
+      filter: drop-shadow(0 0 8px rgba(0, 93, 255, .6));
+    }
+
+    @keyframes step-arrow {
+      0%, 100% { transform: translateY(-3px); }
+      50% { transform: translateY(4px); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .step-arrow { animation: none; }
+    }
+
     .steps-section {
       position: relative;
       isolation: isolate;

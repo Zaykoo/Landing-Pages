@@ -476,6 +476,23 @@
       text-shadow: 0 0 24px rgba(var(--blue-rgb), .4);
     }
 
+    .step-arrow {
+      animation: step-arrow 1.8s ease-in-out infinite;
+    }
+
+    .step-arrow svg {
+      filter: drop-shadow(0 0 8px rgba(0, 93, 255, .6));
+    }
+
+    @keyframes step-arrow {
+      0%, 100% { transform: translateY(-3px); }
+      50% { transform: translateY(4px); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .step-arrow { animation: none; }
+    }
+
     .objection-section {
       padding-top: clamp(20px, 3vw, 36px);
       padding-bottom: clamp(16px, 2.5vw, 28px);
@@ -833,7 +850,7 @@
       </div>
     </section>
 
-    <div class="step-arrow" aria-hidden="true">↓</div>
+    <div class="step-arrow" aria-hidden="true"><svg viewBox="0 0 24 32" width="22" height="30" aria-hidden="true"><path d="M12 2v26M12 28l-8-8M12 28l8-8" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
 
     <section class="section section--two container" aria-labelledby="step-two-title">
       <div class="step">
@@ -849,7 +866,7 @@
       </div>
     </section>
 
-    <div class="step-arrow" aria-hidden="true">↓</div>
+    <div class="step-arrow" aria-hidden="true"><svg viewBox="0 0 24 32" width="22" height="30" aria-hidden="true"><path d="M12 2v26M12 28l-8-8M12 28l8-8" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
 
     <section class="section objection-section container" aria-labelledby="step-three-title">
       <div class="step">
@@ -918,7 +935,7 @@
       </div>
     </section>
 
-    <div class="step-arrow step-arrow--final" aria-hidden="true">↓</div>
+    <div class="step-arrow step-arrow--final" aria-hidden="true"><svg viewBox="0 0 24 32" width="22" height="30" aria-hidden="true"><path d="M12 2v26M12 28l-8-8M12 28l8-8" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
 
     <section class="section final-section container" aria-labelledby="final-title">
       <div class="final-card">
