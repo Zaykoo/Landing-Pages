@@ -879,7 +879,14 @@
           var percent = function () { return duration ? Math.min(100, Math.round((count / Math.floor(duration)) * 100)) : 0; };
           var send = function () {
             if (!count) return;
-            var body = JSON.stringify({ visitor: id, video: "vsl", percent: percent(), seconds: count, duration: Math.round(duration), campaign: campaign });
+            // Tranches de 10 s regardées (« 1 » = vue), pour savoir à quel moment les gens décrochent
+            var buckets = "";
+            for (var b = 0; b < Math.ceil(duration / 10); b++) {
+              var hit = "0";
+              for (var s = b * 10; s < b * 10 + 10; s++) if (seen[s]) { hit = "1"; break; }
+              buckets += hit;
+            }
+            var body = JSON.stringify({ visitor: id, video: "vsl", percent: percent(), seconds: count, duration: Math.round(duration), campaign: campaign, buckets: buckets });
             try {
               if (navigator.sendBeacon) navigator.sendBeacon(API, new Blob([body], { type: "text/plain" }));
               else fetch(API, { method: "POST", body: body, keepalive: true, mode: "no-cors" });
